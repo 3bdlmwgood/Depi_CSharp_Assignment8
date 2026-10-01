@@ -132,6 +132,29 @@ namespace Assignment8
             Console.WriteLine("\n---------------------------------------");
 
             #endregion
+
+            #region Fixed Size List
+
+            Console.WriteLine("Fixed Size List:");
+
+            FixedSizeList<int> fixedSizeList = new FixedSizeList<int>(5);
+            fixedSizeList.Add(1);
+            fixedSizeList.Add(2);
+            fixedSizeList.Add(3);
+            fixedSizeList.Add(4);
+            fixedSizeList.Add(5);
+
+            //fixedSizeList.Add(6);   This will throw an exception because the list is full.
+
+            Console.WriteLine(fixedSizeList.Get(0));
+            Console.WriteLine(fixedSizeList.Get(1));
+            Console.WriteLine(fixedSizeList.Get(2));
+            Console.WriteLine(fixedSizeList.Get(3));
+            Console.WriteLine(fixedSizeList.Get(4));
+
+            Console.WriteLine("---------------------------------------");
+
+            #endregion
         }
     }
 }
