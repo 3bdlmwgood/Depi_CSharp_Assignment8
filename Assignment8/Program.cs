@@ -58,6 +58,33 @@ namespace Assignment8
             }
         }
 
+        static int FirstNonRepeatedCharacter(string text)
+        {
+            Dictionary<char, int> dictionary = new Dictionary<char, int>();
+
+            foreach (char c in text)
+            {
+                if (dictionary.ContainsKey(c))
+                {
+                    dictionary[c]++;
+                }
+                else
+                {
+                    dictionary[c] = 1;
+                }
+            }
+
+            for (int i = 0; i < text.Length; i++)
+            {
+                if (dictionary[text[i]] == 1)
+                {
+                    return i;
+                }
+            }
+
+            return -1;
+        }
+
         static void Main(string[] args)
         {
             #region Bubble Sort
@@ -129,7 +156,7 @@ namespace Assignment8
                 Console.Write(even + " ");
             }
             
-            Console.WriteLine("\n---------------------------------------");
+            Console.WriteLine("---------------------------------------");
 
             #endregion
 
@@ -154,6 +181,22 @@ namespace Assignment8
 
             Console.WriteLine("---------------------------------------");
 
+            #endregion
+
+            #region First Non-Repeated Character
+
+            Console.WriteLine("First Non-Repeated Character:");
+
+            string text = "abccba";
+            int index = FirstNonRepeatedCharacter(text);
+            
+            if (index != -1)
+                Console.WriteLine("The first non-repeated character is: " + text[index]);
+            else
+                Console.WriteLine("There is no non-repeated character.");
+
+            Console.WriteLine("---------------------------------------");
+            
             #endregion
         }
     }
