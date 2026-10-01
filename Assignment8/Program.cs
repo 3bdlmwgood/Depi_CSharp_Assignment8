@@ -40,9 +40,20 @@
                 Console.Write(number + " ");
             }
 
+            Console.WriteLine();
+
             #endregion
 
-            
+            #region Generic Range<T>
+
+            Range<int> range = new Range<int>(0, 10);
+
+            Console.WriteLine(range.IsInRange(7));
+            Console.WriteLine(range.IsInRange(15));
+
+            Console.WriteLine(range.Length());
+
+            #endregion
         }
     }
 }
