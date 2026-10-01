@@ -1,4 +1,6 @@
-﻿namespace Assignment8
+﻿using System.Collections;
+
+namespace Assignment8
 {
     internal class Program
     {
@@ -27,6 +29,23 @@
             }
         }
 
+        static void ReverseArrayList(ArrayList list)
+        {
+            int left = 0;
+            int right = list.Count - 1;
+            
+            while (left < right)
+            {
+                object temp = list[left];
+
+                list[left] = list[right];
+                list[right] = temp;
+                
+                left++;
+                right--;
+            }
+        }
+
         static void Main(string[] args)
         {
             #region Bubble Sort
@@ -40,7 +59,7 @@
                 Console.Write(number + " ");
             }
 
-            Console.WriteLine();
+            Console.WriteLine("\n---------------------------------------\n");
 
             #endregion
 
@@ -53,7 +72,32 @@
 
             Console.WriteLine(range.Length());
 
+            Console.WriteLine("\n---------------------------------------\n");
+
             #endregion
+
+            #region Reverse Array List 
+
+            ArrayList list = new ArrayList();
+
+            list.Add(10);
+            list.Add(20);
+            list.Add(30);
+            list.Add(40);
+            list.Add(50);
+
+            ReverseArrayList(list);
+
+            foreach (var item in list)
+            {
+                Console.Write(item + " ");
+            }
+
+            Console.WriteLine("\n---------------------------------------\n");
+
+            #endregion
+
+
         }
     }
 }
