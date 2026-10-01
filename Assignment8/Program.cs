@@ -46,9 +46,23 @@ namespace Assignment8
             }
         }
 
+        static void GetEvenNumbers(List<int> numbers, out List<int> evenNumbers)
+        {
+            evenNumbers = new List<int>();
+            foreach (int number in numbers)
+            {
+                if (number % 2 == 0)
+                {
+                    evenNumbers.Add(number);
+                }
+            }
+        }
+
         static void Main(string[] args)
         {
             #region Bubble Sort
+
+            Console.WriteLine("Bubble Sort:");
 
             int[] numbers = { 4, 10, 8, 7, 3, 9, 2, 6, 1, 5 };
 
@@ -59,11 +73,13 @@ namespace Assignment8
                 Console.Write(number + " ");
             }
 
-            Console.WriteLine("\n---------------------------------------\n");
+            Console.WriteLine("\n---------------------------------------");
 
             #endregion
 
             #region Generic Range<T>
+
+            Console.WriteLine("Generic Range<T>:");
 
             Range<int> range = new Range<int>(0, 10);
 
@@ -72,11 +88,13 @@ namespace Assignment8
 
             Console.WriteLine(range.Length());
 
-            Console.WriteLine("\n---------------------------------------\n");
+            Console.WriteLine("---------------------------------------");
 
             #endregion
 
             #region Reverse Array List 
+
+            Console.WriteLine("Reverse Array List:");
 
             ArrayList list = new ArrayList();
 
@@ -97,7 +115,23 @@ namespace Assignment8
 
             #endregion
 
+            #region Even Numbers From List
 
+            Console.WriteLine("Even Numbers From List:");
+
+            List<int> integers = new List<int>{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+           
+            GetEvenNumbers(integers, out List<int> evenNumbers);
+
+            foreach (int even in evenNumbers)
+            {
+                Console.Write(even + " ");
+            }
+            
+            Console.WriteLine("\n---------------------------------------");
+
+            #endregion
         }
     }
 }
